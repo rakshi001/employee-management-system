@@ -4,8 +4,12 @@ import Login from "./components/Auth/Login";
 const App = () => {
   return (
     <>
-      <div>hi there</div>
-      <Login />
+      <div>
+        app component
+        <Login />
+
+      </div>
+      
     </>
   );
 };
