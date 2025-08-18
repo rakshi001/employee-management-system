@@ -2,11 +2,15 @@ import React, { useState } from "react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [password, setpassword] = useState("");
+  const [password, setPassword] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("form submitted");
+    console.log("email is ", email);
+    console.log("password is ", password);
+
+    setEmail("");
+    setPassword("");
   };
 
   return (
@@ -22,14 +26,20 @@ const Login = () => {
           className="flex flex-col gap-5"
         >
           <input
-            onChange={() => {
-              console.log("changing");
+            value={email}
+            onChange={(e) => {
+              // console.log("changing");
+              setEmail(e.target.value);
             }}
             type="email"
             placeholder="Email"
             className="border-2 border-emerald-300 rounded-xl px-4 py-3 outline-none focus:border-emerald-500"
           />
           <input
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
             type="password"
             placeholder="Password"
             className="border-2 border-emerald-300 rounded-xl px-4 py-3 outline-none focus:border-emerald-500"
